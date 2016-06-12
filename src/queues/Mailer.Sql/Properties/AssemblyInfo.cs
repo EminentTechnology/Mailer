@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("Mailer.Sql")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Mailer - Simple SQL Email Queue")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Eminent Technology")]
 [assembly: AssemblyProduct("Mailer.Sql")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
