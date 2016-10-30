@@ -77,6 +77,45 @@ namespace Mailer.WindowsService
             }
         }
 
+        [ConfigurationProperty("recorderMailMessageSql", IsRequired = false)]
+        public string RecorderMailMessageSql
+        {
+            get
+            {
+                return this["recorderMailMessageSql"]?.ToString();
+            }
+            set
+            {
+                this["recorderMailMessageSql"] = value;
+            }
+        }
+
+        [ConfigurationProperty("recorderMailMessageAddressSql", IsRequired = false)]
+        public string RecorderMailMessageAddressSql
+        {
+            get
+            {
+                return this["recorderMailMessageAddressSql"]?.ToString();
+            }
+            set
+            {
+                this["recorderMailMessageAddressSql"] = value;
+            }
+        }
+
+        [ConfigurationProperty("recorderMailMessageAttachmentSql", IsRequired = false)]
+        public string RecorderMailMessageAttachmentSql
+        {
+            get
+            {
+                return this["recorderMailMessageAttachmentSql"]?.ToString();
+            }
+            set
+            {
+                this["recorderMailMessageAttachmentSql"] = value;
+            }
+        }
+
 
         [ConfigurationProperty("attachmentProvider", IsRequired = false)]
         public string AttachmentProvider

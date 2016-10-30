@@ -43,20 +43,17 @@ namespace Mailer.Recorders.Sql
 
         internal static MailMessage Populate(MailMessage message, EmailMessage email)
         {
-            //message.MailMessageID = email.Id;
-            //because current sql is guid whilst in queue is bigint
-            message.MailMessageID = Guid.NewGuid().ToString();
+
+            message.MailMessageID = email.Id;
 
             message.MailSubject = email.Subject;
             message.MailBody = email.Body;
             message.Priority = email.Priority.ToString();
             message.IsBodyHtml = email.IsBodyHtml;
-            //message.IsSent = email.i;
-            //message.MailSentDate = email.Address;
+
             message.Template = email.Template;
             message.EntityType = email.EntityType;
             message.EntityID = email.Id;
-            //message.ErrorMessage = email.Address;
             message.CreatedOn = email.CreatedOn;
             message.CreatedBy = email.From.DisplayName;
             message.ModifiedOn = email.CreatedOn;

@@ -70,7 +70,24 @@ namespace Mailer.WindowsService
             switch (config.Recorder.ToLower())
             {
                 case "mailer.recorders.sql.sqlrecorder":
-                    retVal.Recorder = new SqlRecorder($"name={config.RecorderConnectionStringKey}");
+                    if (String.IsNullOrEmpty(config.RecorderMailMessageSql))
+                    {
+                        //use default sql
+                        retVal.Recorder = new SqlRecorder($"name={config.RecorderConnectionStringKey}");
+                    }
+                    else
+                    {
+                        //use custom sql
+                        retVal.Recorder = 
+                            new SqlRecorder
+                            (
+                                $"name={config.RecorderConnectionStringKey}",
+                                $"{config.RecorderMailMessageSql}",
+                                $"{config.RecorderMailMessageAddressSql}",
+                                $"{config.RecorderMailMessageAttachmentSql}"
+                            );
+                    }
+                    
                     break;
             }
 
