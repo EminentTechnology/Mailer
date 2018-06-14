@@ -229,6 +229,7 @@ namespace Mailer.WindowsService
                     catch (Exception ex)
                     {
                         log.Error($"Error processing message in {holder.Config.Name} queue", ex);
+                        await holder.Recorder.RecordFailure(message, ex);
                     }
                 }
             }
