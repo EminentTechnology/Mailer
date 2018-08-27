@@ -8,6 +8,7 @@
     <Description>Mailer - SQL Logging component for Mailer.Sql</Description>
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <FileVersion>1.0.0.1</FileVersion>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\..\queues\Mailer.Sql\SqlConnectionHelper.cs" Link="SqlConnectionHelper.cs" />
