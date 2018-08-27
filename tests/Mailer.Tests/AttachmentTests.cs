@@ -1,16 +1,17 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using System.Threading.Tasks;
 using Mailer.Attachments.Sql;
+using NUnit.Framework;
 
 namespace Mailer.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class AttachmentTests
     {
 
 
-        [TestMethod]
+        [Test]
         public async Task Attachment_RetrievingDocumentByID_ReturnsDocument()
         {
             byte[] data = null;

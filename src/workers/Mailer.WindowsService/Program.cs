@@ -1,7 +1,14 @@
-﻿using Eminent.Service.Helper;
+﻿
 using log4net;
+using Mailer.Attachments.Sql;
+using Mailer.Recorders.Sql;
+using Mailer.Smtp;
+using Mailer.Sql;
+using Mailer.Worker.WindowsService;
+using ServiceHelper;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.ServiceProcess;
 using System.Threading.Tasks;
@@ -11,6 +18,8 @@ namespace Mailer.WindowsService
 {
     static class Program
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -19,63 +28,33 @@ namespace Mailer.WindowsService
         {
             log4net.Config.XmlConfigurator.Configure();
 
-            if (args.Length > 0 && args[0].ToLower().Equals("/debug"))
+            try
             {
-                Application.Run(new ServiceRunner(new MailerService()));
-            }
-            else
-            {
-                ServiceBase[] ServicesToRun;
-                ServicesToRun = new ServiceBase[]
+                if (args.Length > 0 && args[0].ToLower().Equals("/debug"))
                 {
+                    Application.Run(new ServiceRunner(new MailerService()));
+                }
+                else
+                {
+                    ServiceBase[] ServicesToRun;
+                    ServicesToRun = new ServiceBase[]
+                    {
                     new MailerService()
-                };
-                ServiceBase.Run(ServicesToRun);
+                    };
+                    ServiceBase.Run(ServicesToRun);
+                }
             }
-        }
-
-
-        #region logging methods
-        public static void LogException(Exception ex)
-        {
-            LogException(ex, true);
-        }
-
-        public static void LogException(Exception ex, bool rethrow)
-        {
-            LogException(null, ex, rethrow);
-        }
-
-        public static void LogException(string Message, Exception ex, bool rethrow)
-        {
-            ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-
-            if (String.IsNullOrEmpty(Message))
-                log.Error(ex);
-            else
-                log.Error(Message, ex);
-
-            if (rethrow)
+            catch (Exception ex)
             {
-                throw ex;
+                log.Error("Unhandled service error", ex);
             }
+
+            
         }
 
+        
 
+        
 
-        public static void LogInfo(string Message)
-        {
-            ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            log.Info(Message);
-
-        }
-
-        public static void LogDebug(string Message)
-        {
-            ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-            log.Debug(Message);
-
-        }
-        #endregion
     }
 }

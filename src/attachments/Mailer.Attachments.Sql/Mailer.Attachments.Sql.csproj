@@ -3,10 +3,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="log4net" Version="2.0.8" />
+    <Compile Include="..\..\queues\Mailer.Sql\SqlConnectionHelper.cs" Link="SqlConnectionHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.5" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\core\Mailer.Abstractions\Mailer.Abstractions.csproj" />
   </ItemGroup>
-
 </Project>

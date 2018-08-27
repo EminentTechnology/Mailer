@@ -1,16 +1,17 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+
 using Mailer.Sql;
 using Mailer.Abstractions;
 using System.Threading.Tasks;
 using Mailer.Smtp;
+using NUnit.Framework;
 
 namespace Mailer.Tests
 {
-    [TestClass]
+    [TestFixture]
     public class QueueTests
     {
-        [TestMethod]
+        [Test]
         public async Task Queue_QueueingEmail_ReturnsNewMessageId()
         {
             EmailMessage msg = 
@@ -30,7 +31,7 @@ namespace Mailer.Tests
             Assert.IsNotNull(msg.Id);
         }
 
-        [TestMethod]
+        [Test]
         public async Task Queue_QueueingEmailRepeatedly_CreatesSeveralMessagesInQueue()
         {
             EmailMessage msg =

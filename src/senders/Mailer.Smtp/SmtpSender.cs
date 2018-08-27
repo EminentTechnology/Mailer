@@ -14,6 +14,8 @@ namespace Mailer.Smtp
 
     public class SmtpSender : IEmailSender
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         readonly IEmailAttachmentProvider attachmentProvider;
         readonly SmtpSenderConfiguration config;
         readonly IEmailRecorder recorder;
@@ -51,6 +53,8 @@ namespace Mailer.Smtp
                 if (recorder != null)
                 {
                     await recorder.RecordFailure(message, ex);
+
+                    log.Error($"Error encountered trying to send message {message.Id} - {ex.Message}", ex);
                 }
             }
             

@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Mailer.Abstractions;
+using Mailer.Sql;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -122,7 +123,15 @@ namespace Mailer.Recorders.Sql
             var mailMessage = AddNewMailMessage(message);
 
             mailMessage.IsSent = false;
-            mailMessage.ErrorMessage = error.Message;
+
+            if (error.InnerException == null)
+            {
+                mailMessage.ErrorMessage = error.Message;
+            }
+            else
+            {
+                mailMessage.ErrorMessage = $"{error.Message}\r\n\r\nInner Exception:\r\n{error.InnerException.Message}";
+            }
 
             await InsertEmail(mailMessage);
             
@@ -202,69 +211,10 @@ namespace Mailer.Recorders.Sql
             await InsertEmail(mailMessage);
         }
 
-        #region GetConnection
-        private IDbConnection GetConnection()
-        {
-            IDbConnection connection = null;
-            ConnectionStringSettings connectionStringSettings = null;
-            string connectionString = null;
-
-            var connectionStrings = ConfigurationManager.ConnectionStrings;
-
-            //if name or connectionstring is provided
-            if (!String.IsNullOrEmpty(NameOrConnectionString))
-            {
-
-                string[] segments = NameOrConnectionString.Split('=');
-                
-                //see how many segments we have in the provided name or connectionstring
-                if (segments.Length > 0)
-                {
-                    var firstKey = segments[0].Trim();
-                    //if only 2 segment and it is called name 
-                    if ((segments.Length == 2) && (firstKey.ToLower() == "name"))
-                    {
-                        //then get the connectionstring from the connectionstrings node in config
-                       connectionStringSettings = connectionStrings[segments[1]];
-                    }
-                    else
-                    {
-                        //otherwise this is a connectionstring
-                        connectionString = NameOrConnectionString;
-                    }
-                }
-                else
-                {
-                    //if not segment (ie - no equal sign) then retrieve from config by name
-                    connectionStringSettings = connectionStrings[NameOrConnectionString];
-                }
-
-            }
-            else
-            {
-                //nothing was specified - so use the first connection in connectionstrings
-                if(connectionStrings.Count > 0)
-                {
-                    //take the first connection as default
-                    connectionStringSettings = connectionStrings[0];
-
-                }
-            }
-
-            if (connectionStringSettings != null)
-            {
-                connectionString = connectionStringSettings.ConnectionString;
-            }
-
-            //build connection
-            connection = new SqlConnection(connectionString);
-
-            return connection;
-        }
-        #endregion GetConnection
+     
         private async Task InsertEmail(MailMessage mailMessage)
         {
-            using (var conn = GetConnection())
+            using (var conn = SqlConnectionHelper.GetConnection(NameOrConnectionString))
             {
                 conn.Open();
 
