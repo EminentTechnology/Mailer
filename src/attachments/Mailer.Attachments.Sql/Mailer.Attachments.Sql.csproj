@@ -6,6 +6,8 @@
     <Company>Eminent Technology</Company>
     <PackageReleaseNotes>Upgrade to .NET Standard</PackageReleaseNotes>
     <Description>Mailer - Email Attachments provider for SQL Server</Description>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\..\queues\Mailer.Sql\SqlConnectionHelper.cs" Link="SqlConnectionHelper.cs" />

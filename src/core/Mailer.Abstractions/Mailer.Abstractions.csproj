@@ -6,5 +6,7 @@
     <Company>Eminent Technology</Company>
     <PackageReleaseNotes>Upgrade to .NET Standard</PackageReleaseNotes>
     <Description>Mailer - Abstractions</Description>
+    <AssemblyVersion>1.0.0.1</AssemblyVersion>
+    <FileVersion>1.0.0.1</FileVersion>
   </PropertyGroup>
 </Project>
