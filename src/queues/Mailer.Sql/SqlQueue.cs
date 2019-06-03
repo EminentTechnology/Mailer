@@ -54,26 +54,7 @@ namespace Mailer.Sql
                 }
 
             }
-            //using (var db = GetDbContext())
-            //{
-            //    db.Database.Log = Console.WriteLine;
-
-
-            //    var item = await db.Database.SqlQuery<GetMessageResponse>(
-            //           @"delete top(1) from mailmessagequeue
-            //            output deleted.Id, deleted.Payload, deleted.CreatedOn
-            //            where Id = (
-            //            select top(1) Id
-            //              from mailmessagequeue with (rowlock, updlock, readpast)
-            //            order by Id)").FirstOrDefaultAsync();
-
-            //    if(item != null)
-            //    {
-            //        retVal = ConvertStringPayloadToEmailMessage(item.Id, item.Payload);
-            //        retVal.CreatedOn = item.CreatedOn;
-            //    }
-                
-            //}
+            
 
             return retVal;
         }

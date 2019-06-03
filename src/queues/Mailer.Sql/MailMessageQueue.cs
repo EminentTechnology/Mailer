@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper.Contrib.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mailer.Sql
 {
+    [Table("MailMessageQueue")]
     public class MailMessageQueue
     {
         public long Id { get; set; }

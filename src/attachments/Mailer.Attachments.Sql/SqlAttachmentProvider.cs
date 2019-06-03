@@ -65,7 +65,7 @@ namespace Mailer.Attachments.Sql
                 else
                 {
 
-                    if (String.IsNullOrWhiteSpace(document.DocumentUrl))
+                    if (!String.IsNullOrWhiteSpace(document.DocumentUrl))
                     {
                         using (var client = new System.Net.WebClient())
                         {
