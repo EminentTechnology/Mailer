@@ -53,7 +53,7 @@ namespace Mailer.Recorders.Sql
 
             message.Template = email.Template;
             message.EntityType = email.EntityType;
-            message.EntityID = email.Id;
+            message.EntityID = email.EntityId;
             message.CreatedOn = email.CreatedOn;
             message.CreatedBy = email.From.DisplayName;
             message.ModifiedOn = email.CreatedOn;
