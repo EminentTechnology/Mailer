@@ -89,33 +89,11 @@ namespace Mailer.Sql
                 }
 
             }
-            //using (var db = GetDbContext())
-            //{
-            //    db.Database.Log = Console.WriteLine;
-
-
-            //    var items = await db.Database.SqlQuery<GetMessageResponse>(
-            //           $@"delete top({messageCount}) from mailmessagequeue
-            //            output deleted.Id, deleted.Payload, deleted.CreatedOn
-            //            where Id in (
-            //            select top({messageCount}) Id
-            //              from mailmessagequeue with (rowlock, updlock, readpast)
-            //            order by Id)").ToListAsync();
-
-            //    //S retVal.Body = payload;
-            //    foreach (var item in items)
-            //    {
-            //        EmailMessage m = ConvertStringPayloadToEmailMessage(item.Id, item.Payload);
-            //        m.CreatedOn = item.CreatedOn;
-            //        emails.Add(m);
-            //    }
-
-            //}
 
             return emails;
         }
 
-        public async Task QueueMessage(EmailMessage message)
+        public Task QueueMessage(EmailMessage message)
         {
             MailMessageQueue queuedMessage = new MailMessageQueue();
 
@@ -134,6 +112,8 @@ namespace Mailer.Sql
 
                 message.Id = queuedMessage.Id.ToString();
             }
+
+            return Task.CompletedTask;
         }
 
         private  string ConvertToStringPayload(EmailMessage message)

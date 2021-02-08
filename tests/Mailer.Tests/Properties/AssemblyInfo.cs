@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Mailer.WindowsService")]
+[assembly: AssemblyTitle("Mailer.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Mailer.WindowsService")]
+[assembly: AssemblyProduct("Mailer.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("529b1d43-8461-44d1-ab04-5b61ccfcfef3")]
+[assembly: Guid("792B42E2-5854-42D2-9EAE-235926FB54A1")]
 
 // Version information for an assembly consists of the following four values:
 //

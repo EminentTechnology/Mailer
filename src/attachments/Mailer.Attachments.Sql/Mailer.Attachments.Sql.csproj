@@ -14,8 +14,9 @@
     <Compile Include="..\..\queues\Mailer.Sql\SqlConnectionHelper.cs" Link="SqlConnectionHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="1.50.5" />
-    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+    <PackageReference Include="Dapper" Version="2.0.78" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\core\Mailer.Abstractions\Mailer.Abstractions.csproj" />

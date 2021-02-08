@@ -13,6 +13,7 @@ namespace Mailer.Tests
     public class RecorderTests
     {
         [Test]
+        [Ignore("Integration")]
         public async Task Recorder_AddingNewMessage_ShouldInsertIntoMailTables()
         {
 

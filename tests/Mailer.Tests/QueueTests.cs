@@ -12,6 +12,7 @@ namespace Mailer.Tests
     public class QueueTests
     {
         [Test]
+        [Ignore("Integration")]
         public async Task Queue_QueueingEmail_ReturnsNewMessageId()
         {
             EmailMessage msg = 
@@ -32,6 +33,7 @@ namespace Mailer.Tests
         }
 
         [Test]
+        [Ignore("Integration")]
         public async Task Queue_QueueingEmailRepeatedly_CreatesSeveralMessagesInQueue()
         {
             EmailMessage msg =
@@ -55,31 +57,5 @@ namespace Mailer.Tests
 
             
         }
-
-
-        SmtpSenderConfiguration GetConfiguration()
-        {
-            SmtpSenderConfiguration retVal = new SmtpSenderConfiguration();
-
-            //retVal.Host = "";
-            //retVal.Port = "";
-            //retVal.EnableSsl = "";
-
-            //retVal.UseDefaultCredentials = "";
-            //retVal.UserName = "";
-            //retVal.Password = "";
-
-            //retVal.PickupDirectoryLocation = "";
-
-            //retVal.TargetName = "";
-            //retVal.Timeout = "";
-
-
-            return retVal;
-        }
-
     }
-
-
-
 }
