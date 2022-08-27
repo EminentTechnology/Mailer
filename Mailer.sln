@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Abstractions", "src\core\Mailer.Abstractions\Mailer.Abstractions.csproj", "{E112D486-F786-483C-B9FC-8109EC320A73}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Abstractions", "src\core\Mailer.Abstractions\Mailer.Abstractions.csproj", "{E112D486-F786-483C-B9FC-8109EC320A73}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.WindowsService", "src\workers\Mailer.WindowsService\Mailer.WindowsService.csproj", "{529B1D43-8461-44D1-AB04-5B61CCFCFEF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Smtp", "src\senders\Mailer.Smtp\Mailer.Smtp.csproj", "{8AF939D4-B50D-40EF-B975-BDC0FF4FFC55}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Smtp", "src\senders\Mailer.Smtp\Mailer.Smtp.csproj", "{8AF939D4-B50D-40EF-B975-BDC0FF4FFC55}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{73AB38DA-022A-40C9-AFE2-8FD32569B4CF}"
 EndProject
@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workers", "workers", "{486F
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "queues", "queues", "{662DDF99-CC56-4CC1-A0E0-58BEE11E3C33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Sql", "src\queues\Mailer.Sql\Mailer.Sql.csproj", "{3F948E00-D191-4C84-8158-3D40FCC6D325}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Sql", "src\queues\Mailer.Sql\Mailer.Sql.csproj", "{3F948E00-D191-4C84-8158-3D40FCC6D325}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Tests", "tests\Mailer.Tests\Mailer.Tests.csproj", "{69CD46BF-3519-4017-9BE5-A4D58D0F59B9}"
 EndProject
@@ -25,13 +25,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "recorders", "recorders", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "emailattachments", "emailattachments", "{96D75924-7A93-4D2D-A02C-0AD26890826C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Recorders.Sql", "src\recorders\Mailer.Recorders.Sql\Mailer.Recorders.Sql.csproj", "{4C4464D7-9DDD-447A-B3DC-120F1E0999F1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Recorders.Sql", "src\recorders\Mailer.Recorders.Sql\Mailer.Recorders.Sql.csproj", "{4C4464D7-9DDD-447A-B3DC-120F1E0999F1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EBD1CDEB-4A42-499C-9798-EE9470CC597A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Attachments.Sql", "src\attachments\Mailer.Attachments.Sql\Mailer.Attachments.Sql.csproj", "{D59A9889-2DE5-42C9-9D1D-FFBFC9CDEC09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Attachments.Sql", "src\attachments\Mailer.Attachments.Sql\Mailer.Attachments.Sql.csproj", "{D59A9889-2DE5-42C9-9D1D-FFBFC9CDEC09}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Worker.WindowsService", "src\workers\Mailer.Worker.WindowsService\Mailer.Worker.WindowsService.csproj", "{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.SendGrid", "src\senders\Mailer.SendGrid\Mailer.SendGrid.csproj", "{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,10 @@ Global
 		{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{4C4464D7-9DDD-447A-B3DC-120F1E0999F1} = {722C06C2-E3B8-4F0D-8175-0EEA81A3F4DC}
 		{D59A9889-2DE5-42C9-9D1D-FFBFC9CDEC09} = {96D75924-7A93-4D2D-A02C-0AD26890826C}
 		{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
+		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF} = {FE285E8B-2024-4F46-8789-D7BE7FC105BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAD94741-4830-400C-A85E-E16F0317C563}

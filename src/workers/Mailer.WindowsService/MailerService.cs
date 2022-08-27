@@ -2,6 +2,7 @@
 using Mailer.Abstractions;
 using Mailer.Attachments.Sql;
 using Mailer.Recorders.Sql;
+using Mailer.SG;
 using Mailer.Smtp;
 using Mailer.Sql;
 using Mailer.Worker.WindowsService;
@@ -108,7 +109,11 @@ namespace Mailer.WindowsService
                     SmtpSender smtpSender = new SmtpSender(retVal.AttachmentProvider, smtpConfig, retVal.Recorder);
                     retVal.Sender = smtpSender;
                     break;
-
+                case "mailer.sg.sendgridsender":
+                    SendGridSenderConfiguration sgConfig = GetSendGridSenderConfiguration(config);
+                    SendGridSender sgSender = new SendGridSender(retVal.AttachmentProvider, sgConfig, retVal.Recorder);
+                    retVal.Sender = sgSender;
+                    break;
             }
 
 
@@ -128,6 +133,14 @@ namespace Mailer.WindowsService
             retVal.Timeout = config.SenderTimeout;
             retVal.UseDefaultCredentials = config.SenderUseDefaultCredentials;
             retVal.UserName = config.SenderUserName;
+
+            return retVal;
+        }
+
+        private static SendGridSenderConfiguration GetSendGridSenderConfiguration(QueueConfigurationElement config)
+        {
+            SendGridSenderConfiguration retVal = new SendGridSenderConfiguration();
+            retVal.ApiKey = config.SenderUserName;
 
             return retVal;
         }
