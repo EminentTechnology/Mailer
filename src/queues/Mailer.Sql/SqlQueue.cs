@@ -45,7 +45,7 @@ namespace Mailer.Sql
 
                 conn.Open();
 
-                var item = await conn.QueryFirstAsync<GetMessageResponse>(command);
+                var item = await conn.QueryFirstOrDefaultAsync<GetMessageResponse>(command);
 
                 if (item != null)
                 {
