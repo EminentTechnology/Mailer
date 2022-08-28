@@ -116,6 +116,25 @@ namespace Mailer.WindowsService
                     break;
             }
 
+            if (retVal.Queue == null)
+            {
+                throw new Exception($"Queue {config.Name} is not setup correctly - check queue configuration");
+            }
+
+            if (retVal.Sender == null)
+            {
+                throw new Exception($"Sender for Queue {config.Name} is not setup correctly - check queue configuration");
+            }
+
+            if (retVal.AttachmentProvider == null)
+            {
+                throw new Exception($"AttachmentProvider for Queue {config.Name} is not setup correctly - check queue configuration");
+            }
+
+            if (retVal.AttachmentProvider == null)
+            {
+                throw new Exception($"Recorder for Queue {config.Name} is not setup correctly - check queue configuration");
+            }
 
             return retVal;
         }
