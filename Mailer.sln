@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30907.101
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Abstractions", "src\core\Mailer.Abstractions\Mailer.Abstractions.csproj", "{E112D486-F786-483C-B9FC-8109EC320A73}"
 EndProject
@@ -33,7 +33,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Attachments.Sql", "s
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.Worker.WindowsService", "src\workers\Mailer.Worker.WindowsService\Mailer.Worker.WindowsService.csproj", "{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.SendGrid", "src\senders\Mailer.SendGrid\Mailer.SendGrid.csproj", "{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.SendGrid", "src\senders\Mailer.SendGrid\Mailer.SendGrid.csproj", "{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Worker.WebJob", "src\workers\Mailer.Worker.WebJob\Mailer.Worker.WebJob.csproj", "{9706011F-D9CB-4207-8145-11BECEAF18AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -77,6 +79,10 @@ Global
 		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9706011F-D9CB-4207-8145-11BECEAF18AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9706011F-D9CB-4207-8145-11BECEAF18AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9706011F-D9CB-4207-8145-11BECEAF18AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9706011F-D9CB-4207-8145-11BECEAF18AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +97,7 @@ Global
 		{D59A9889-2DE5-42C9-9D1D-FFBFC9CDEC09} = {96D75924-7A93-4D2D-A02C-0AD26890826C}
 		{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
 		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF} = {FE285E8B-2024-4F46-8789-D7BE7FC105BB}
+		{9706011F-D9CB-4207-8145-11BECEAF18AE} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAD94741-4830-400C-A85E-E16F0317C563}

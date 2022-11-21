@@ -9,8 +9,6 @@ namespace Mailer.Worker.WindowsService
 {
     public class QueueConfigurationElement : ConfigurationElement
     {
- 
-
         [ConfigurationProperty("name", IsRequired = true)]
         public string Name
         {
