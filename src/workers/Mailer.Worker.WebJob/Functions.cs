@@ -28,7 +28,7 @@ namespace Mailer.Worker.WebJob
         }
 
         [Singleton]
-        public async Task SendMessagesInQueue([TimerTrigger("0/30 * * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
+        public async Task SendMessagesInQueue([TimerTrigger("0 * * * * *", RunOnStartup = true)] TimerInfo myTimer, ILogger log)
         {
             this.log = log;
 
