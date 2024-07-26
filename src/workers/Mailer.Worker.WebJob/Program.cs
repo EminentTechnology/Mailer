@@ -40,7 +40,8 @@ namespace Mailer.Worker.WebJob
             builder.ConfigureWebJobs(b =>
             {
                 b.AddTimers();
-                b.AddAzureStorageCoreServices();
+                b.AddAzureStorageBlobs();
+                b.AddAzureStorageQueues();
             });
 
             builder.ConfigureServices((context, b) =>

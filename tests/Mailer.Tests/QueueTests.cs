@@ -1,10 +1,8 @@
-﻿using System;
-
+﻿using Mailer.Abstractions;
 using Mailer.Sql;
-using Mailer.Abstractions;
-using System.Threading.Tasks;
-using Mailer.Smtp;
 using NUnit.Framework;
+using System;
+using System.Threading.Tasks;
 
 namespace Mailer.Tests
 {
@@ -24,12 +22,12 @@ namespace Mailer.Tests
 
             msg.Attachments.Add(new EmailAttachment {AttachmentId= "1B263DC3-6241-43CE-9D2D-021487C73C5C", ContentType= "application/pdf", FileName="my.pdf" });
 
-            Assert.IsNull(msg.Id);
-            
+            Assert.That(msg.Id, Is.Null);
+
             SqlQueue q = new SqlQueue();
             await q.QueueMessage(msg);
 
-            Assert.IsNotNull(msg.Id);
+            Assert.That(msg.Id, Is.Not.Null);
         }
 
         [Test]
@@ -43,19 +41,17 @@ namespace Mailer.Tests
                     $"test @ {DateTime.Now}",
                     "body");
 
-            Assert.IsNull(msg.Id);
+            Assert.That(msg.Id, Is.Null);
 
             SqlQueue q = new SqlQueue();
             await q.QueueMessage(msg);
 
-            Assert.IsNotNull(msg.Id);
+            Assert.That(msg.Id, Is.Not.Null);
 
             for (int i = 0; i < 5; i++)
             {
                 await q.QueueMessage(msg);
             }
-
-            
         }
     }
 }

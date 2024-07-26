@@ -1,11 +1,8 @@
-﻿using System;
-
-using Mailer.Abstractions;
+﻿using Mailer.Abstractions;
 using Mailer.Recorders.Sql;
-using System.Threading.Tasks;
-
-using System.Text;
 using NUnit.Framework;
+using System;
+using System.Threading.Tasks;
 
 namespace Mailer.Tests
 {
@@ -31,6 +28,4 @@ namespace Mailer.Tests
 
         }
     }
-
-    
 }

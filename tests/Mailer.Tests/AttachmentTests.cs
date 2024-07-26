@@ -17,12 +17,12 @@ namespace Mailer.Tests
         {
             byte[] data = null;
 
-            Assert.IsNull(data);
+            Assert.That(data, Is.Null);
 
             SqlAttachmentProvider q = new SqlAttachmentProvider("name=ConnectionString");
             data = await q.GetAttachmentSource("1B263DC3-6241-43CE-9D2D-021487C73C5C");
 
-            Assert.IsNotNull(data);
+            Assert.That(data, Is.Null);
             Console.WriteLine("byte[] size = {0}", data.Length);
         }
     }
