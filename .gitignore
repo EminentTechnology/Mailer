@@ -16,4 +16,4 @@ queues.config
 *.sln.ide
 *.userprefs
 _ReSharper.*
-/.vs
+.vs/
