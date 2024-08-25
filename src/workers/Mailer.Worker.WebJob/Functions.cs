@@ -42,7 +42,17 @@ namespace Mailer.Worker.WebJob
                     }
                     catch (Exception ex)
                     {
-                        log.LogError($"Error encountered while processing queue - {queue.Config.Name}", ex);
+                        log.LogError($"Error encountered while processing queue - {queue.Config.Name} - {ex.Message}", ex);
+
+                        if(ex.InnerException != null)
+                        {
+                            log.LogError($"Inner exception: {ex.InnerException.Message}", ex.InnerException);
+
+                            if(ex.InnerException.InnerException != null)
+                            {
+                                log.LogError($"Inner inner exception: {ex.InnerException.InnerException.Message}", ex.InnerException.InnerException);
+                            }
+                        }
                     }
                 }
             }
@@ -61,7 +71,6 @@ namespace Mailer.Worker.WebJob
                 List<EmailMessage> messages = await holder.Queue.GetMessages(holder.Config.QueueReceiveBatchSize);
 
                 log.LogInformation($"{messages.Count} emails received from {holder.Config.Name} queue");
-
 
                 foreach (var message in messages)
                 {
@@ -179,7 +188,7 @@ namespace Mailer.Worker.WebJob
             switch (config.AttachmentProvider.ToLower())
             {
                 case "mailer.attachments.sql.sqlattachmentprovider":
-                    retVal.AttachmentProvider = new SqlAttachmentProvider($"name={config.ConnectionString}", config.AttachmentSql);
+                    retVal.AttachmentProvider = new SqlAttachmentProvider($"{config.ConnectionString}", config.AttachmentSql);
                     break;
             }
 

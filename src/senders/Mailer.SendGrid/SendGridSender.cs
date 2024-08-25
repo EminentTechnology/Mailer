@@ -72,7 +72,7 @@ namespace Mailer.SG
                         writer.Flush();
                         s.Position = 0;
 
-                        await sgMessage.AddAttachmentAsync(item.FileName, s, item.ContentType);
+                        await sgMessage.AddAttachmentAsync(item.FileName, s, item.ContentType, item.Disposition, item.ContentId);
                     }
                 }
 

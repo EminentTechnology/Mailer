@@ -1,15 +1,8 @@
-﻿
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Data;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
+﻿using Dapper;
 using Mailer.Abstractions;
 using Mailer.Sql;
+using System;
+using System.Threading.Tasks;
 
 namespace Mailer.Attachments.Sql
 {
@@ -18,7 +11,7 @@ namespace Mailer.Attachments.Sql
         private readonly string NameOrConnectionString = null;
 
 
-        private string AttachmentSQL = @"SELECT DocumentId, StorageType, DocumentUrl, [File] FROM Document WHERE DocumentId = @DocumentId";
+        private string AttachmentSQL = @"SELECT CAST(DocumentId as NVARCHAR(50)) DocumentId, StorageType, DocumentUrl, [File] FROM Document WHERE DocumentId = @DocumentId";
 
         public SqlAttachmentProvider()
         {
@@ -29,7 +22,7 @@ namespace Mailer.Attachments.Sql
         {
             NameOrConnectionString = nameOrConnectionString;
 
-            if (String.IsNullOrWhiteSpace(attachmentSQL))
+            if (!String.IsNullOrWhiteSpace(attachmentSQL))
             {
                 AttachmentSQL = attachmentSQL;
             }
@@ -67,9 +60,18 @@ namespace Mailer.Attachments.Sql
 
                     if (!String.IsNullOrWhiteSpace(document.DocumentUrl))
                     {
+                        string url = document.DocumentUrl;
+
+                        // Regular expression to check if the URL starts with a known protocol
+                        if (!System.Text.RegularExpressions.Regex.IsMatch(url, @"^[a-zA-Z][a-zA-Z0-9+-.]*://"))
+                        {
+                            // If it doesn't match a known protocol, prepend "https://"
+                            url = "https://" + url;
+                        }
+
                         using (var client = new System.Net.WebClient())
                         {
-                            retVal =  client.DownloadData(document.DocumentUrl);
+                            retVal = await client.DownloadDataTaskAsync(new Uri(url));
                         }
                     }
                 }
@@ -77,9 +79,6 @@ namespace Mailer.Attachments.Sql
             }
 
             return retVal;
-        }
-
-  
-        
+        } 
     }
 }

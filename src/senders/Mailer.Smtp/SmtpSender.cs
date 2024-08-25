@@ -226,8 +226,6 @@ namespace Mailer.Smtp
                 client.Credentials = cred;
             }
 
-            
-
             return client;
 
         }

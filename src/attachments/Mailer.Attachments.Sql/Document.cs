@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mailer.Attachments.Sql
+﻿namespace Mailer.Attachments.Sql
 {
     public class Document
     {
