@@ -126,7 +126,11 @@ namespace Mailer.Azure.StorageEmailQueue
                     return await blobStorage.GetEmailMessage(blobRef.BlobRef);
                 }
             }
-            catch { /* Not a blob reference */ }
+            catch (Exception ex)
+            {
+                // Log the exception for diagnostic purposes
+                Console.WriteLine($"Failed to deserialize as BlobReferencePayload: {ex.Message}");
+            }
             
             // Try to deserialize as EmailMessage
             return JsonConvert.DeserializeObject<EmailMessage>(messageContent);
