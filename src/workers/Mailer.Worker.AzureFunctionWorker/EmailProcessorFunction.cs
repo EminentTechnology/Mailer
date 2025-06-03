@@ -1,11 +1,8 @@
-using Azure.Storage.Queues;
 using Mailer.Abstractions;
 using Mailer.Azure.StorageEmailQueue;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using System;
-using System.Threading.Tasks;
 
 namespace Mailer.Worker.AzureFunctionWorker
 {
