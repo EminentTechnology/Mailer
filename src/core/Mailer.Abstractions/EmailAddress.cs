@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Mailer.Abstractions
+﻿namespace Mailer.Abstractions
 {
     public class EmailAddress
     {
@@ -38,8 +32,6 @@ namespace Mailer.Abstractions
             {
                 _DisplayName = value;
             }
-        }
-
-        
+        } 
     }
 }

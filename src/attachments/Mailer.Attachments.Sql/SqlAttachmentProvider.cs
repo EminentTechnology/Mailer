@@ -9,8 +9,6 @@ namespace Mailer.Attachments.Sql
     public class SqlAttachmentProvider : IEmailAttachmentProvider
     {
         private readonly string NameOrConnectionString = null;
-
-
         private string AttachmentSQL = @"SELECT CAST(DocumentId as NVARCHAR(50)) DocumentId, StorageType, DocumentUrl, [File] FROM Document WHERE DocumentId = @DocumentId";
 
         public SqlAttachmentProvider()

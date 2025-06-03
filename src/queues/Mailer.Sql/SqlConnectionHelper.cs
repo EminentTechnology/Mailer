@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Configuration;
-using System.Data.SqlClient;
-using System.Text;
 
 namespace Mailer.Sql
 {

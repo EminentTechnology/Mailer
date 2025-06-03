@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <UserSecretsId>92d5a9c5-2aac-4b1d-9a03-c33c185e267a</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="8.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\core\Mailer.Abstractions\Mailer.Abstractions.csproj" />
+    <ProjectReference Include="..\..\src\queues\Mailer.Azure.StorageEmailQueue\Mailer.Azure.StorageEmailQueue.csproj" />
+    <ProjectReference Include="..\..\src\queues\Mailer.Sql\Mailer.Sql.csproj" />
+  </ItemGroup>
+
+</Project>
