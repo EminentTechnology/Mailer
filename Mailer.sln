@@ -37,6 +37,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mailer.SendGrid", "src\send
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Worker.WebJob", "src\workers\Mailer.Worker.WebJob\Mailer.Worker.WebJob.csproj", "{9706011F-D9CB-4207-8145-11BECEAF18AE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Azure.StorageEmailQueue", "src\queues\Mailer.Azure.StorageEmailQueue\Mailer.Azure.StorageEmailQueue.csproj", "{B1515D40-D361-46FF-9B0A-C2BDA62EF3AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Worker.AzureFunctionWorker", "src\workers\Mailer.Worker.AzureFunctionWorker\Mailer.Worker.AzureFunctionWorker.csproj", "{8B493184-AE93-6B6A-2CFE-781BBB0A7021}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +87,14 @@ Global
 		{9706011F-D9CB-4207-8145-11BECEAF18AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9706011F-D9CB-4207-8145-11BECEAF18AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9706011F-D9CB-4207-8145-11BECEAF18AE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1515D40-D361-46FF-9B0A-C2BDA62EF3AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1515D40-D361-46FF-9B0A-C2BDA62EF3AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1515D40-D361-46FF-9B0A-C2BDA62EF3AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1515D40-D361-46FF-9B0A-C2BDA62EF3AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B493184-AE93-6B6A-2CFE-781BBB0A7021}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B493184-AE93-6B6A-2CFE-781BBB0A7021}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B493184-AE93-6B6A-2CFE-781BBB0A7021}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B493184-AE93-6B6A-2CFE-781BBB0A7021}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -98,6 +110,8 @@ Global
 		{57ADF71D-AF2E-410A-AB60-DBB5DEC4266E} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
 		{50C4FC27-97DA-4BCD-AAA6-C124C64C46AF} = {FE285E8B-2024-4F46-8789-D7BE7FC105BB}
 		{9706011F-D9CB-4207-8145-11BECEAF18AE} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
+		{B1515D40-D361-46FF-9B0A-C2BDA62EF3AD} = {662DDF99-CC56-4CC1-A0E0-58BEE11E3C33}
+		{8B493184-AE93-6B6A-2CFE-781BBB0A7021} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAD94741-4830-400C-A85E-E16F0317C563}
