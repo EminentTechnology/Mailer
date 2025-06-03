@@ -41,6 +41,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Azure.StorageEmailQu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Worker.AzureFunctionWorker", "src\workers\Mailer.Worker.AzureFunctionWorker\Mailer.Worker.AzureFunctionWorker.csproj", "{8B493184-AE93-6B6A-2CFE-781BBB0A7021}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.TestHarness", "tests\Mailer.TestHarness\Mailer.TestHarness.csproj", "{80B57A61-0080-2E3D-7729-A14853749560}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{8B493184-AE93-6B6A-2CFE-781BBB0A7021}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B493184-AE93-6B6A-2CFE-781BBB0A7021}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B493184-AE93-6B6A-2CFE-781BBB0A7021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80B57A61-0080-2E3D-7729-A14853749560}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80B57A61-0080-2E3D-7729-A14853749560}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80B57A61-0080-2E3D-7729-A14853749560}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80B57A61-0080-2E3D-7729-A14853749560}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +118,7 @@ Global
 		{9706011F-D9CB-4207-8145-11BECEAF18AE} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
 		{B1515D40-D361-46FF-9B0A-C2BDA62EF3AD} = {662DDF99-CC56-4CC1-A0E0-58BEE11E3C33}
 		{8B493184-AE93-6B6A-2CFE-781BBB0A7021} = {486FF4FB-BC4C-4C1A-AC3C-7AAA1ECDE280}
+		{80B57A61-0080-2E3D-7729-A14853749560} = {EBD1CDEB-4A42-499C-9798-EE9470CC597A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DAD94741-4830-400C-A85E-E16F0317C563}
