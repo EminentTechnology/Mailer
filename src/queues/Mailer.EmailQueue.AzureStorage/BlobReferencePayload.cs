@@ -1,6 +1,6 @@
 using System;
 
-namespace Mailer.Azure.StorageEmailQueue
+namespace Mailer.EmailQueue.AzureStorage
 {
     public class BlobReferencePayload
     {

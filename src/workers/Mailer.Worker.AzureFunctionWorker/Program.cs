@@ -1,6 +1,6 @@
 using Mailer.Abstractions;
-using Mailer.Azure.StorageEmailQueue;
 using Mailer.Attachments.Sql;
+using Mailer.EmailQueue.AzureStorage;
 using Mailer.Recorders.Sql;
 using Mailer.SG;
 using Microsoft.Azure.Functions.Worker.Builder;

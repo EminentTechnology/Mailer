@@ -1,10 +1,7 @@
 using Mailer.Abstractions;
-using Mailer.Azure.StorageEmailQueue;
+using Mailer.EmailQueue.AzureStorage;
 using Mailer.Sql;
 using Microsoft.Extensions.Configuration;
-using System;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace Mailer.TestHarness
 {

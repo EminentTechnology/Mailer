@@ -1,5 +1,5 @@
 using Mailer.Abstractions;
-using Mailer.Azure.StorageEmailQueue;
+using Mailer.EmailQueue.AzureStorage;
 using Microsoft.Azure.Functions.Worker;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;

@@ -21,7 +21,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\core\Mailer.Abstractions\Mailer.Abstractions.csproj" />
-    <ProjectReference Include="..\..\queues\Mailer.Azure.StorageEmailQueue\Mailer.Azure.StorageEmailQueue.csproj" />
+    <ProjectReference Include="..\..\queues\Mailer.EmailQueue.AzureStorage\Mailer.EmailQueue.AzureStorage.csproj" />
     <ProjectReference Include="..\..\recorders\Mailer.Recorders.Sql\Mailer.Recorders.Sql.csproj" />
     <ProjectReference Include="..\..\attachments\Mailer.Attachments.Sql\Mailer.Attachments.Sql.csproj" />
     <ProjectReference Include="..\..\senders\Mailer.SendGrid\Mailer.SendGrid.csproj" />

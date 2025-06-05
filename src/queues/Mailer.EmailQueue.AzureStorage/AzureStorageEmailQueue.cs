@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Mailer.Azure.StorageEmailQueue
+namespace Mailer.EmailQueue.AzureStorage
 {
     public class AzureStorageEmailQueue : IEmailQueue
     {
