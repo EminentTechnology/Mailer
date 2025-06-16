@@ -41,7 +41,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.Worker.AzureFunction
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.TestHarness", "tests\Mailer.TestHarness\Mailer.TestHarness.csproj", "{80B57A61-0080-2E3D-7729-A14853749560}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.EmailQueue.AzStorage", "src\queues\Mailer.EmailQueue.AzureStorage\Mailer.EmailQueue.AzStorage.csproj", "{1E711585-2915-95AE-C391-6CDB1639D291}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mailer.EmailQueue.BlueCloud", "src\queues\Mailer.EmailQueue.AzureStorage\Mailer.EmailQueue.BlueCloud.csproj", "{1E711585-2915-95AE-C391-6CDB1639D291}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -6,7 +6,7 @@
     <RepositoryUrl>https://github.com/EminentTechnology/Mailer</RepositoryUrl>
     <Company>Eminent Technology</Company>
     <PackageReleaseNotes>Initial Implementation</PackageReleaseNotes>
-    <Description>Mailer - Azure Storage Email Queue</Description>
+    <Description>Mailer - Blue Cloud Storage Email Queue</Description>
     <AssemblyVersion>1.0.0.1</AssemblyVersion>
     <FileVersion>1.0.0.1</FileVersion>
     <Version>1.0.1</Version>
