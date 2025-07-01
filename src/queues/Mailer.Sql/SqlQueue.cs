@@ -5,7 +5,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Xml;
 using System.Xml.Linq;
 
@@ -53,12 +52,8 @@ namespace Mailer.Sql
                 }
 
             }
-            
-
             return retVal;
         }
-
-       
 
         public async Task<List<EmailMessage>> GetMessages(int messageCount=2)
         {
@@ -86,7 +81,6 @@ namespace Mailer.Sql
                     m.CreatedOn = item.CreatedOn;
                     emails.Add(m);
                 }
-
             }
 
             return emails;
